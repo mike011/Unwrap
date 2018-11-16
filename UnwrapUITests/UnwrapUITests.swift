@@ -45,8 +45,9 @@ class UnwrapUITests: XCTestCase {
     //Check that trying to share score displays the ActivityView on the HomeViewController
     func testShareScoreShows() {
         let app = XCUIApplication()
-        
-        app.tables.cells["Stat"].staticTexts["Share Score"].tap()
+
+        app.tables.cells["Points"].swipeUp()
+        app.tables.staticTexts["Share Score"].tap()
         
         //Delay ActivityViewController to verify the right buttons exist
         let predicate = NSPredicate(format: "exists == 1")
